@@ -1,0 +1,29 @@
+.container {
+    max-width: auto;
+    padding: 0px;
+    margin: 0;
+
+}
+
+.title {
+    font-size: x-large;
+
+}
+
+.a {
+    color: blue;
+}
+.a2{
+    padding: 50px;
+}
+.p1 {
+    padding: 50px;
+
+}
+
+.footer{
+    position: fixed ;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+}
