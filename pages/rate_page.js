@@ -3,7 +3,7 @@ import Review from "../components/post";
 import Layout from "../components/layout";
 import Head from "next/head";
 import ImposterButton from "../components/imposter"
-import Suschecker from "../components/suschecker"
+//import SelfReport from "../components/suschecker";
 
 
 
@@ -22,11 +22,11 @@ function Rating () {
                 <Review name="Tilde" message="'regret not giving you my superlike damn, you're so cute i'm taken aback'" stars="★★★★★"/>
                 <Review name="(also) Tilde" message="'have you ever been touched by a girl? .... because you kind of seem like you haven't'"/>
                 <ImposterButton />
-
-
+                
             </Layout>
         </div>
-
+    
  );
 }
+
 export default Rating

@@ -1,17 +1,14 @@
 import Head from 'next/head'
 //import Image from 'next/image'
 import Styles from './layout.module.css'
-import textStyles from "../styles/fonts.module.css"
 import Link from 'next/link'
-import navBar from '../components/nagivationbar'
+//import navBar from '../components/nagivationbar'
 
 const name = 'Kyle March'
 export const siteTitle = 'My Home Page'
 
 export default function Layout({ children, home }) {
     return (
-    
-    <textStyles>
       <div className={Styles.container}>
         <Head>
 
@@ -19,7 +16,7 @@ export default function Layout({ children, home }) {
         <header>
          <h1>*The* Homepage</h1>
         </header>
-        <p1>Navigate to:</p1>
+        <p>Navigate to:</p>
         <ul className={Styles.a}>
            <Link href="/">
             <a>||Home Page||</a>
@@ -28,9 +25,10 @@ export default function Layout({ children, home }) {
             <a>About Me||</a>
           </Link>
           <p></p>
-          if i just type like this and then
-          go here
-          <a2>2||</a2>
+          <Link href="/emile">
+          <a>||Emile Alain Gutzeit</a>
+          </Link>
+          <a>2||</a>
           <p></p>
         </ul>
       
@@ -42,7 +40,5 @@ export default function Layout({ children, home }) {
       
       
       {children}</div>
-      </textStyles>
-      
     )
   }

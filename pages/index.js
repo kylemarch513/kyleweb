@@ -13,7 +13,7 @@ export default function Home () {
         <title>{siteTitle}</title>
         <h1 className={TextStyles.center}>Placeholder Name</h1>
       </Head>
-      <div className={TextStyles.p1}>
+      <div>
         placeholder
       </div>
       TEsting

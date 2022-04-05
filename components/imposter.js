@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import selfReport from "./suschecker";
+import Image from "next/image"
+import img from "../components/theimposter.jpg"
 
 
 function Sus () {
@@ -7,7 +9,6 @@ function Sus () {
     const becomeSus = () => {
         setSus(!isSus);
         console.log(isSus);
-        <selfReport />
 
     }
 
