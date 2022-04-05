@@ -4,6 +4,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Times New Roman';
+  max-height: fit-content;
 }
 
 a {
@@ -13,4 +14,23 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.review {
+  max-width: 300px;
+  border: 1px solid red;
+
+}
+
+.bioBody{
+  max-width: 500px;
+  border: 1px solid red;
+}
+p {
+  max-width: 400px;
+}
+bigButton {
+  font-size: 400px;
+  padding: 100px;
+  align-items: center;
 }
