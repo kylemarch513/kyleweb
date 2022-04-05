@@ -17,14 +17,14 @@ export default function Layout({ children, home }) {
 
         </Head>
         <header>
-         
+         <h1>*The* Homepage</h1>
         </header>
         <p1>Navigate to:</p1>
         <ul className={Styles.a}>
            <Link href="/">
             <a>||Home Page||</a>
           </Link>
-          <Link href="/pages/nav/aboutme">
+          <Link href="/rate_page">
             <a>About Me||</a>
           </Link>
           <p></p>
