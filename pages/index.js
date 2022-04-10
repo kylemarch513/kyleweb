@@ -13,8 +13,13 @@ export default function Home () {
         <title>{siteTitle}</title>
         <h1 className={TextStyles.center}>Placeholder Name</h1>
       </Head>
+      <div className={TextStyles.blink}>
+        <h1>Placeholder Name</h1>
+      </div>
       <div>
-        placeholder
+        <p>
+          This webpage will be a living archive of things and ideas that my friends and I have produced. These pages contain items that I believe should be seen.
+        </p>
       </div>
       TEsting
     </Layout>

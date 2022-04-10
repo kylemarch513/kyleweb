@@ -2,6 +2,7 @@ import Head from 'next/head'
 //import Image from 'next/image'
 import Styles from './layout.module.css'
 import Link from 'next/link'
+import TextStyles from "../styles/fonts.module.css"
 //import navBar from '../components/nagivationbar'
 
 const name = 'Kyle March'

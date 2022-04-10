@@ -56,3 +56,26 @@
   .center {
       text-align: center;
   }
+  .emilepagestyle {
+    align-items: center;
+  
+  }
+  .blink {
+    animation: blink 2s steps(1, end) infinite;
+    color: red;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+  
