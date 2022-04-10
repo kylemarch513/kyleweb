@@ -76,6 +76,28 @@
       opacity: 1;
     }
   }
+  .seizure {
+    animation: blink 0.07s steps(1, end) infinite;
+    animation: color 0.25 infinite;
+  }
 
+  @keyframes color{
+    0% {
+      color: red;
+    }
+    25% {
+      color: blueviolet;
+    }
+    50% {
+      color: blue;
+    }
+    75% {
+      color: blueviolet;
+    }
+    100% {
+      color: red;
+    }
+    
+  }
 
   

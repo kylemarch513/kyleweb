@@ -17,11 +17,14 @@ function Emile () {
             <Head>
                 <title>Emile's Portfolio</title>
             </Head>
-            <Image src={phonto} height="75%" width="75%"/>
+
             <Layout>
+            <Image src={phonto} height="75%" width="75%" />
+                <h1>Emile Gutzeit</h1>
+                <p>These images are a mood board and collection of concept art created by Emile. These pieces are reflective of his well curated skills in the field of design. I believe they should be displayed unaltered so they have been left at their original resolution.</p>
                 <Image src={img1}/>
                 <Image src={img2}/>
-                <Image src={img3} height="30" width="30"/>
+                <Image src={img3}/>
                 <Image src={img4}/>
                 <Image src={img5}/>
                 <Image src={img6}/>

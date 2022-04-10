@@ -11,17 +11,15 @@ export default function Home () {
     <Layout>
       <Head>
         <title>{siteTitle}</title>
-        <h1 className={TextStyles.center}>Placeholder Name</h1>
       </Head>
-      <div className={TextStyles.blink}>
-        <h1>Placeholder Name</h1>
+      <div className={TextStyles.seizure}>
+        <h1>Epilepsy Warning</h1>
       </div>
       <div>
         <p>
-          This webpage will be a living archive of things and ideas that my friends and I have produced. These pages contain items that I believe should be seen.
+          This webpage will be a living archive of things and ideas that are associated with my friends and I. Some stuff is more important than others, but I think its all pretty neat.
         </p>
       </div>
-      TEsting
     </Layout>
   </div>
   )

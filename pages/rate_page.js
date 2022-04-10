@@ -11,12 +11,19 @@ function Rating () {
     return (
         <div>
             <Head>
-                <title>Messages from Tinder</title>
+                <title>About Me</title>
             </Head>
             <Layout>
                 <div>
                     <h2>Kyle March</h2>
                     <p>A: 6'4, half Chinese, half American, born and raised in Amsterdam, and in the top 1.2% of ARAM players in EUW. I am a up and coming developer to be (hopefully), if my crippling League of Legends and GuildWars2 addiction don't get the better of me.</p>
+                    <ul>
+                        League IGN: ChAoS513 (Made this account when I was 12 please ignore the obscenely edgy name)
+                        <p />
+                        GW2 Acc ID: Triarch.9183
+                        <p />
+                        Instagram: @_kyle.march
+                    </ul>
                 </div>
                 <Review name="Maike" message="'Hey. Je bent echt kaulo sexy'" stars="★★★★☆"/>
                 <Review name="Tilde" message="'regret not giving you my superlike damn, you're so cute i'm taken aback'" stars="★★★★★"/>
