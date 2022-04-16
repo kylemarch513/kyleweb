@@ -1,6 +1,6 @@
-import { isApiRoute } from "next/dist/server/base-server";
 import React, {useState} from "react";
-
+import Picture from "./theimposter.jpg";
+import Image from "next/image";
 
 
 
@@ -27,18 +27,32 @@ function Amongus (props) {
         }
     }    
 
-    return (
-        <div>
-            <button
-            onClick={handleClick}>
-                {props.text}
-            </button>
-            <h3>
-                Sus status : {status}
-            </h3>
-        </div>
-    )}
-
+    if(isImposter){
+        return (
+            <div>
+                <button
+                onClick={handleClick}>
+                    {props.text}
+                </button>
+                <h3>
+                    Sus status : {status}
+                </h3>
+            </div>
+        )} else {
+            return (
+                <div>
+                    <button
+                        onClick={handleClick}>
+                            {props.text}
+                    </button>
+                    <h3>
+                        Sus status : {status}
+                    </h3>
+                    <Image onClick={handleClick} src={Picture} layout='fill' sizes="50vw"/>
+                </div>
+            )
+        }
+    }
 ;
 
 export default Amongus
