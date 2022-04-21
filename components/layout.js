@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Styles from './layout.module.css'
 import Link from 'next/link'
 import TextStyles from "../styles/fonts.module.css"
+import LogIn from './login'
 const name = 'Kyle March'
 export const siteTitle = 'My Home Page'
 
@@ -13,7 +14,7 @@ export default function Layout({ children, home }) {
 
         </Head>
          <ul className={TextStyles.headingXl}>
-           <a className={TextStyles.blink}>*</a><a>The</a><a className={TextStyles.blink}>*</a><a> HomePage</a>
+           <a className={TextStyles.blink}>*</a><a>The</a><a className={TextStyles.blink}>*</a><a> HomePage</a> 
          </ul>
         <p>Navigate to:</p>
         <ul className={Styles.a}>

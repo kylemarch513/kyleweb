@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "local-storage": "^2.0.0",
     "next": "12.1.4",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "use-local-storage": "^2.3.6"
   },
   "devDependencies": {
     "eslint": "8.12.0",

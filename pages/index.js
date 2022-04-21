@@ -3,6 +3,7 @@ import Layout, {siteTitle} from '../components/layout'
 import TextStyles from "../styles/fonts.module.css"
 import Link from 'next/link'
 import Counter from '../components/counter'
+import LogIn from '../components/login'
 
 
 export default function Home () {
