@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Picture from "./theimposter.jpg";
 import Image from "next/image";
 
@@ -6,6 +6,15 @@ import Image from "next/image";
 
 function Amongus (props) {
     const [isImposter, setImposter] = useState (true)
+
+    useEffect(() => {
+        console.log('itsworking');
+        window.scrollTo('0', '0');
+    }
+
+    );[isImposter]
+
+
     const handleClick = () => showImposter ()
     let status;
     if (!isImposter) {

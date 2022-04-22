@@ -11,6 +11,7 @@ import ls from 'local-storage'
 
 
 function Rating () {
+
     const [password, setPassword] = useState ();
 
     
