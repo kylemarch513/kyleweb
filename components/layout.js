@@ -30,6 +30,9 @@ export default function Layout({ children, home }) {
           </Link>
           <a>||</a>
           <p></p>
+          <Link href='/search'>
+            <a>||Waifus||</a>
+          </Link>
         </ul>
       
       
