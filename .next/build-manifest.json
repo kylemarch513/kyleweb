@@ -25,15 +25,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/rate_page": [
+    "/payment": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/rate_page.js"
-    ],
-    "/search": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/search.js"
+      "static/chunks/pages/payment.js"
     ]
   },
   "ampFirstPages": []
