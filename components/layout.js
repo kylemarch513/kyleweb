@@ -33,6 +33,9 @@ export default function Layout({ children, home }) {
           <Link href='/search'>
             <a>||Waifus||</a>
           </Link>
+          <Link href='/payment'>
+            <a>NFTs||</a>
+          </Link>
         </ul>
       
       
