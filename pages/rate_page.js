@@ -3,6 +3,7 @@ import Review from "../components/post";
 import Layout from "../components/layout";
 import Head from "next/head";
 import ImposterButton from "../components/imposter"
+import data from "../components/post-data"
 import LogIn, {password} from "../components/login"
 import ls from 'local-storage'
 //import UserName from '../components/username'
@@ -11,7 +12,16 @@ import ls from 'local-storage'
 
 
 function Rating () {
-
+    const tinder = data.map(post => {
+        return (
+            <Review
+                key={[post.id]}
+                name={post.name}
+                message={post.message}
+                stars={post.stars}
+            />
+        )
+    })
     const [password, setPassword] = useState ();
 
     
@@ -42,9 +52,7 @@ function Rating () {
                             Instagram: @_kyle.march
                         </ul>
                     </div>
-                    <Review name="Maike" message="'Hey. Je bent echt kaulo sexy'" stars="★★★★☆"/>
-                    <Review name="Tilde" message="'regret not giving you my superlike damn, you're so cute i'm taken aback'" stars="★★★★★"/>
-                    <Review name="(also) Tilde" message="'have you ever been touched by a girl? .... because you kind of seem like you haven't'"/>
+                    {tinder}
                     <ImposterButton text="Click this button if you are sus"/> 
                     
                 </Layout>
