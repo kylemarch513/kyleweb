@@ -19,7 +19,7 @@ export default [
     },
     {
         id:4,
-        name:"russian name placeholder",
+        name:"валерия",
         message:"'i am a sinji kinnie, sorry'",
         stars:"★★★★★"
     }
