@@ -12,29 +12,39 @@ import ls from 'local-storage'
 
 
 function Rating () {
+    const setPassword = () => {ls.set("password", prompt('EnterPasswordHere'))};
     const tinder = data.map(post => {
         return (
             <Review
-                key={[post.id]}
-                name={post.name}
-                message={post.message}
-                stars={post.stars}
+                key={post.id}
+                {...post}
             />
         )
     })
-    const [password, setPassword] = useState ();
-
-    
+    const [login, setLogin] = useState (false);
+    //make password as just variable, read by setLogin and then change state
+    //on page render check local storage for password state
+    useEffect(() => {
+        if ((ls.get("password")) === ('kanye2020')){
+            setLogin(true)
+            ls.set(login===true)
+        } else{
+            setLogin(false)
+        }
+        })
+    //handleClick function to set password and if password is correct change state to true. later make the password check called from hidden api or smth from gitignore.
     const handleClick =() => {
-        //setPassword(password = (prompt('Enter password here')));
-        //localStorage.setItem('password', JSON.stringify(password));
-        setPassword(ls.set("password", prompt('EnterPasswordHere')));
+        setPassword()
         console.log(ls.get("password"))
+        if ((ls.get("password")) === ('kanye2020')){
+            setLogin(true)
+            ls.set(login===true)
+        } else{
+            setLogin(false)
+        }
     }
 
-
-    //Json.parse(localStorage.getItem('password'));
-    if ((ls.get("password")) === ('kanye2020')) {
+    if (login) {
         return (
                 <div>
                 <Head>
