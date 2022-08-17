@@ -3,6 +3,8 @@ import QuizButton from "../components/QuizButton";
 import Layout from "../components/layout";
 import ls from 'local-storage'
 import Styles from "../components/quizzy.module.css";
+import loading from "../images/loading.jpeg"
+import Image from "next/image";
 
 export default function Quiz (){
     const [quizData, setQuizData] = useState(null)
@@ -14,9 +16,10 @@ export default function Quiz (){
     const [menu, setMenu] = useState(false)
     const [category, setCategory] = useState("")
     const [difficulty, setDifficulty] = useState("")
+    const [type, setType] = useState("")
 
     useEffect(()=>{
-        fetch("https://opentdb.com/api.php?amount=" + (quizLength+1) + "&category=" + category + "&difficulty=" + difficulty)
+        fetch("https://opentdb.com/api.php?amount=" + (quizLength+1) + "&category=" + category + "&difficulty=" + difficulty + "&type=" + type)
         .then(res=>res.json())
         .then(data => setQuizData(data.results))
         if(!highScore){
@@ -48,13 +51,20 @@ export default function Quiz (){
         setQuizzy(false)
     }
     const setLength = (e) => {
+        if(parseInt(e.target.value) < 1 || parseInt(e.target.value) > 30){
+            setQuizlength(5)
+        } else {
         setQuizlength(e.target.value)
+        }
     }
     const changeCategory = (e) => {
         setCategory(e.target.value)
     }
     const changeDifficulty = (e) => {
         setDifficulty(e.target.value)
+    }
+    const changeType = (e) => {
+        setType(e.target.value)
     }
     const openMenu = () => {
         setMenu(prevMenu => !prevMenu)
@@ -98,7 +108,7 @@ export default function Quiz (){
             {submition:wrongAnswers[2], correct:false},
         ]
         const ranAnswers = shuffle(answers).filter(obj => obj.submition)
-        const buttonElements = ranAnswers.map(({correct, submition})=> <QuizButton func={handleClick} value={correct} text={decodeHtml(submition)}/>)
+        const buttonElements = ranAnswers.map(({correct, submition})=> <QuizButton func={handleClick} value={correct} text={decodeHtml(submition)} />)
 
         return(
             <div style={Styles}>
@@ -117,7 +127,7 @@ export default function Quiz (){
                 {menu && <div>
                     <p>Testing</p>
                     <label>Quiz Length: </label>
-                    <input type="number" onChange={setLength} min="1"/>
+                    <input type="number" onChange={setLength} min="1" max="30" placeholder="5"/>
                     <label>Category: </label>
                     <select onChange={changeCategory} name="trivia_category">
 			            <option value="0">Any Category</option>
@@ -154,6 +164,12 @@ export default function Quiz (){
                         <option value="medium">Medium</option>
                         <option value="hard">Hard</option>                        
                     </select>
+                    <label>Type: </label>
+                    <select name="trivia_type" onChange={changeType}>
+		                <option value="any">Any Type</option>
+		                <option value="multiple">Multiple Choice</option>
+		                <option value="boolean">True / False</option>
+		            </select>
                 </div>}
             </div>
         )
@@ -161,6 +177,8 @@ export default function Quiz (){
         return(
             <div>
                 <Layout/>
+                <h2>Loading Trivia App...</h2>
+                <Image src={loading} height="50%" width="50"/>
             </div>            
         )
     }

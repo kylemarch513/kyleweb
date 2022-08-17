@@ -34,3 +34,14 @@ bigButton {
   padding: 100px;
   align-items: center;
 }
+button {
+  cursor: pointer;
+}
+.buttonsquizzy {
+  display: inline;
+}
+.quizzybutton {
+  display: block;
+  padding: 20px;
+  background-color: aqua;
+}
