@@ -29,6 +29,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/quiz.js"
+    ],
+    "/rate_page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/rate_page.js"
     ]
   },
   "ampFirstPages": []

@@ -21,6 +21,7 @@ function Rating () {
             />
         )
     })
+    const [tinderLogin, setTinderLogin] = useState(false);
     const [login, setLogin] = useState (false);
     //make password as just variable, read by setLogin and then change state
     //on page render check local storage for password state
@@ -28,10 +29,16 @@ function Rating () {
         if ((ls.get("password")) === ('kanye2020')){
             setLogin(true)
             ls.set(login===true)
-        } else{
+        } else {
             setLogin(false)
         }
-        })
+        if(ls.get("tinderPass") === ("kyle2060")){
+            setTinderLogin(true)
+            ls.set(login===true)
+        } else {
+            setTinderLogin(false)
+        }
+    })
     //handleClick function to set password and if password is correct change state to true. later make the password check called from hidden api or smth from gitignore.
     const handleClick =() => {
         setPassword()
@@ -41,6 +48,15 @@ function Rating () {
             ls.set(login===true)
         } else{
             setLogin(false)
+        }
+    }
+    const handleTinder = () => {
+        ls.set("tinderPass", prompt("Enter Password Here"))
+        if(ls.get("tinderPass") === ("kyle2060")){
+            setTinderLogin(true)
+            ls.set(login===true)
+        } else {
+            setTinderLogin(false)
         }
     }
 
@@ -62,7 +78,8 @@ function Rating () {
                             Instagram: @_kyle.march
                         </ul>
                     </div>
-                    {tinder}
+                    <button onClick={handleTinder}>Second Password?</button>
+                    {tinderLogin && <div>{tinder}</div>}
                     <ImposterButton text="Click this button if you are sus"/> 
                     
                 </Layout>

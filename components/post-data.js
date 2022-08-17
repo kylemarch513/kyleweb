@@ -19,15 +19,15 @@ export default [
     },
     {
         id:4,
+        name:"Sterre",
+        message:"mullet daddy \n oops",
+    },
+    {
+        id:5,
         name:"валерия",
         message:"'i am a sinji kinnie, sorry'",
         stars:"★★★★★"
     },
-    {
-        id:5,
-        name:"Sterre",
-        message:"mullet daddy \n oops",
-    }
 ]
 
 

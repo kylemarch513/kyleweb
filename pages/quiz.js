@@ -119,7 +119,7 @@ export default function Quiz (){
                     <label>Quiz Length: </label>
                     <input type="number" onChange={setLength} min="1"/>
                     <label>Category: </label>
-                    <select onChange={changeCategory} name="trivia_category" class="form-control">
+                    <select onChange={changeCategory} name="trivia_category">
 			            <option value="0">Any Category</option>
 			            <option value="9">General Knowledge</option>
                         <option value="10">Entertainment: Books</option>
