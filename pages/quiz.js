@@ -8,7 +8,7 @@ export default function Quiz (){
     const [quizData, setQuizData] = useState(null)
     const [questionNum, setQuestionNum] = useState(0)
     const [score, setScore] = useState (0)
-    const [quizzy, setQuizzy] = useState(false)
+    const [quizzy, setQuizzy] = useState(true)
     const [highScore, setHighScore] = useState(ls.get("highscore"))
     const [quizLength, setQuizlength] = useState(5)
     const [menu, setMenu] = useState(false)
@@ -16,14 +16,14 @@ export default function Quiz (){
     const [difficulty, setDifficulty] = useState("")
 
     useEffect(()=>{
-        fetch("https://opentdb.com/api.php?amount=" + (quizLength+1) + category + difficulty)
+        fetch("https://opentdb.com/api.php?amount=" + (quizLength+1) + "&category=" + category + "&difficulty=" + difficulty)
         .then(res=>res.json())
         .then(data => setQuizData(data.results))
         if(!highScore){
             ls.set("highscore", 0)
         }
     },[quizzy])
-    console.log("question number", questionNum, "quizlength", quizLength)
+   
     useEffect(()=>{
         if(questionNum === parseInt(quizLength))
         {
@@ -42,12 +42,19 @@ export default function Quiz (){
         return txt.value;
     }
     const resetGame = () => {
+        setMenu(false)
         setScore(0)
         setQuestionNum(0)
         setQuizzy(false)
     }
-    const setLength = () => {
-        setQuizlength(prompt("Enter a number"))
+    const setLength = (e) => {
+        setQuizlength(e.target.value)
+    }
+    const changeCategory = (e) => {
+        setCategory(e.target.value)
+    }
+    const changeDifficulty = (e) => {
+        setDifficulty(e.target.value)
     }
     const openMenu = () => {
         setMenu(prevMenu => !prevMenu)
@@ -62,7 +69,7 @@ export default function Quiz (){
         } else {
             setQuestionNum(questionNum + 1)
         }
-        }
+    }
     
     function shuffle(array) {
         let currentIndex = array.length,  randomIndex;
@@ -80,7 +87,7 @@ export default function Quiz (){
         }
 
         return array;
-        }
+    }
 
     if(quizData){
         const wrongAnswers = quizData[questionNum].incorrect_answers
@@ -109,7 +116,44 @@ export default function Quiz (){
                 {quizzy && <button onClick={openMenu}>{!menu ? "Open Settings" : "Close Settings"}</button>}
                 {menu && <div>
                     <p>Testing</p>
-                    <button onClick={setLength}>Choose Quiz Length</button>
+                    <label>Quiz Length: </label>
+                    <input type="number" onChange={setLength} min="1"/>
+                    <label>Category: </label>
+                    <select onChange={changeCategory} name="trivia_category" class="form-control">
+			            <option value="0">Any Category</option>
+			            <option value="9">General Knowledge</option>
+                        <option value="10">Entertainment: Books</option>
+                        <option value="11">Entertainment: Film</option>
+                        <option value="12">Entertainment: Music</option>
+                        <option value="13">Entertainment: Musicals &amp; Theatres</option>
+                        <option value="14">Entertainment: Television</option>
+                        <option value="15">Entertainment: Video Games</option>
+                        <option value="16">Entertainment: Board Games</option>
+                        <option value="17">Science &amp; Nature</option>
+                        <option value="18">Science: Computers</option>
+                        <option value="19">Science: Mathematics</option>
+                        <option value="20">Mythology</option>
+                        <option value="21">Sports</option>
+                        <option value="22">Geography</option>
+                        <option value="23">History</option>
+                        <option value="24">Politics</option>
+                        <option value="25">Art</option>
+                        <option value="26">Celebrities</option>
+                        <option value="27">Animals</option>
+                        <option value="28">Vehicles</option>
+                        <option value="29">Entertainment: Comics</option>
+                        <option value="30">Science: Gadgets</option>
+                        <option value="31">Entertainment: Japanese Anime &amp; Manga</option>
+                        <option value="32">Entertainment: Cartoon &amp; Animations</option>
+                    </select>
+                    <p></p>
+                    <label>Difficulty: </label>
+                    <select onChange={changeDifficulty} name="trivia_difficulty">
+                        <option value="any">Any Difficulty</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>                        
+                    </select>
                 </div>}
             </div>
         )
