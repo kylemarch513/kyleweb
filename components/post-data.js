@@ -22,6 +22,11 @@ export default [
         name:"валерия",
         message:"'i am a sinji kinnie, sorry'",
         stars:"★★★★★"
+    },
+    {
+        id:5,
+        name:"Sterre",
+        message:"mullet daddy \n oops",
     }
 ]
 

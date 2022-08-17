@@ -36,6 +36,10 @@ export default function Layout({ children, home }) {
           <Link href='/payment'>
             <a>NFTs||</a>
           </Link>
+          <p></p>
+          <Link href="/quiz">
+            <a>||Trivia Game||</a>
+          </Link>
         </ul>
       
       

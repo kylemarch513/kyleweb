@@ -34,7 +34,7 @@ function Search (){
             src={girlUrl}
             height='500'
             width='500'
-           /><p1>Tags:Maid, waifu, blank.</p1></ul>
+           /><p>Tags:Maid, waifu, blank.</p></ul>
            <button onClick={getGirl}>
                Click for Random photo
            </button>
