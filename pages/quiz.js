@@ -69,6 +69,9 @@ export default function Quiz (){
     const openMenu = () => {
         setMenu(prevMenu => !prevMenu)
     }
+    const fixError = () => {
+        window.location.reload()
+    }
     //target is always a string
     const handleClick = (e) => {
         //console.log('here we go:', e.target.value, typeof e.target.value)
@@ -99,7 +102,7 @@ export default function Quiz (){
         return array;
     }
 
-    if(quizData){
+    if(quizData && quizData.length > 1){
         const wrongAnswers = quizData[questionNum].incorrect_answers
         const answers = [
             {submition:quizData[questionNum].correct_answer, correct:true,},
@@ -171,6 +174,14 @@ export default function Quiz (){
 		                <option value="boolean">True / False</option>
 		            </select>
                 </div>}
+            </div>
+        )
+    } else if (quizData && quizData.length <= 0){
+        return(
+            <div>
+                <Layout/>
+                <h2>Oops there are no questions that meet those criteria.</h2>
+                <button onClick={fixError}>Reset</button>
             </div>
         )
     } else {
